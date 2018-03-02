@@ -12,12 +12,7 @@ class Triangle
 
   def kind
     if (@sides.sort.last >= @sides.sort[0] + @sides.sort[1])
-      begin
-        raise TriangleError
-      rescue TriangleError => error
-        puts error.invalid
-        raise TriangleError
-      end
+      raise TriangleError
     elsif @one == @two && @two == @three
       return :equilateral
     elsif @sides.uniq == @sides
@@ -30,7 +25,5 @@ class Triangle
 end
 
 class TriangleError < StandardError
-  def invalid
-    "Your triangle is invalid"
-  end
+
 end
