@@ -11,7 +11,7 @@ class Triangle
   end
 
   def kind
-    if (@sides.sort.last >= @sides.sort[0] + @sides.sort[1]) || @sides.include?(0)
+    if (@sides.sort.last >= @sides.sort[0] + @sides.sort[1])
       begin
         raise TriangleError
       rescue TriangleError => error
